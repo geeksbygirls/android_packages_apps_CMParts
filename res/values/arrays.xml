@@ -62,8 +62,6 @@
         <item>@string/hardware_keys_action_sleep</item>
         <item>@string/hardware_keys_action_last_app</item>
         <item>@string/hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_single_handed_left</item>
-        <item>@string/hardware_keys_action_single_handed_right</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -77,8 +75,6 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
-        <item>10</item>
-        <item>11</item>
     </string-array>
 
     <string-array name="power_menu_actions_array" translatable="false">
@@ -213,6 +209,9 @@
 	<item>@string/status_bar_battery_style_icon_portrait</item>
 	<item>@string/status_bar_battery_style_solid</item>
 	<item>@string/status_bar_battery_style_circle</item>
+        <item>@string/status_bar_battery_style_bigcircle</item>
+        <item>@string/status_bar_battery_style_aoscp</item>
+        <item>@string/status_bar_battery_style_aicp</item>
 	<item>@string/status_bar_battery_style_hidden</item>
 	<item>@string/status_bar_battery_style_icon_landscape</item>
 	<item>@string/status_bar_battery_style_text</item>
@@ -225,6 +224,9 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
      </string-array>
 
     <string-array name="status_bar_battery_percentage_entries" translatable="false">
