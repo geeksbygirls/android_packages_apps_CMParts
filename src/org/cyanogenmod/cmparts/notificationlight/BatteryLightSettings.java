@@ -33,6 +33,7 @@ import org.cyanogenmod.cmparts.R;
 import org.cyanogenmod.cmparts.SettingsPreferenceFragment;
 
 import cyanogenmod.preference.CMSystemSettingSwitchPreference;
+import cyanogenmod.preference.SystemSettingSwitchPreference;
 import cyanogenmod.providers.CMSettings;
 
 public class BatteryLightSettings extends SettingsPreferenceFragment implements
@@ -44,6 +45,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private static final String FULL_COLOR_PREF = "full_color";
     private static final String REALLY_FULL_COLOR_PREF = "really_full_color";
     private static final String LIGHT_ENABLED_PREF = "battery_light_enabled";
+    private static final String LIGHT_DND_PREF = "battery_light_allow_on_dnd";
     private static final String PULSE_ENABLED_PREF = "battery_light_pulse";
 
     private PreferenceGroup mColorPrefs;
@@ -52,6 +54,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ApplicationLightPreference mFullColorPref;
     private ApplicationLightPreference mReallyFullColorPref;
     private CMSystemSettingSwitchPreference mLightEnabledPref;
+    private SystemSettingSwitchPreference mLightDndPref;
     private CMSystemSettingSwitchPreference mPulseEnabledPref;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -69,6 +72,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         mLightEnabledPref = (CMSystemSettingSwitchPreference) prefSet.findPreference(LIGHT_ENABLED_PREF);
         mPulseEnabledPref = (CMSystemSettingSwitchPreference) prefSet.findPreference(PULSE_ENABLED_PREF);
+        mLightDndPref = (SystemSettingSwitchPreference) prefSet.findPreference(LIGHT_DND_PREF);
 
         final NotificationManager nm = getContext().getSystemService(NotificationManager.class);
 
@@ -198,9 +202,11 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         final boolean batteryLightEnabled = res.getBoolean(R.bool.def_battery_light_enabled);
         final boolean batteryLightPulseEnabled = res.getBoolean(R.bool.def_battery_light_pulse);
+        final boolean batteryLightDndEnabled = res.getBoolean(R.bool.def_battery_light_dnd);
 
         if (mLightEnabledPref != null) mLightEnabledPref.setChecked(batteryLightEnabled);
         if (mPulseEnabledPref != null) mPulseEnabledPref.setChecked(batteryLightPulseEnabled);
+        if (mLightDndPref != null) mLightDndPref.setChecked(batteryLightDndEnabled);
 
         resetColors();
     }
